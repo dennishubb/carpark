@@ -24,7 +24,7 @@ export function getCarpark() {
                     total_lots += Number(value.total_lots);
                     lots_available += Number(value.lots_available);
                 });
-
+                console.log(total_lots, lots_available, value.carpark_number);
                 setLowMediumBigLargeLowestHighest(total_lots, lots_available, value.carpark_number, carparkData);
 
             });
@@ -62,10 +62,13 @@ function setLowMediumBigLargeLowestHighest(total_lots: number, lots_available: n
 }
 
 function setLowestHighestData(type: string, total_lots: number, lots_available: number, carpark_number: string, carpark_data: any){
-    if(carpark_data[type].lowest.total === -1){
+    if(carpark_data[type].lowest.total === -1 && carpark_data[type].highest.total === -1){
         carpark_data[type].lowest.total = total_lots;
         carpark_data[type].lowest.available = lots_available;
         carpark_data[type].lowest.number = carpark_number;
+        carpark_data[type].highest.total = total_lots;
+        carpark_data[type].highest.available = lots_available;
+        carpark_data[type].highest.number = carpark_number;
     }else{
         if(total_lots === carpark_data[type].lowest.total){
             carpark_data[type].lowest.available += lots_available;
