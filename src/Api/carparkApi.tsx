@@ -62,7 +62,7 @@ function setLowMediumBigLargeLowestHighest(total_lots: number, lots_available: n
 }
 
 function setLowestHighestData(type: string, total_lots: number, lots_available: number, carpark_number: string, carpark_data: any){
-    if(carpark_data.small.lowest.total === -1){
+    if(carpark_data[type].lowest.total === -1){
         carpark_data[type].lowest.total = total_lots;
         carpark_data[type].lowest.available = lots_available;
         carpark_data[type].lowest.number = carpark_number;
