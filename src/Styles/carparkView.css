@@ -1,0 +1,14 @@
+#carparkViewGroup{
+    position: absolute;
+    left: 0; right: 0;
+    overflow-y: scroll;
+    top: 10px;
+    padding-bottom: 20px;
+}
+
+.carparkViewDiv{
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-top: 5px;
+}
